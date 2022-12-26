@@ -1,4 +1,4 @@
-package br.com.bancodedados.loja.testes.dao;
+package br.com.bancodedados.loja.dao;
 
 import br.com.bancodedados.loja.modelo.Categoria;
 import br.com.bancodedados.loja.modelo.Produto;

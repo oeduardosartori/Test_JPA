@@ -1,7 +1,7 @@
 package br.com.bancodedados.loja.testes;
 
-import br.com.bancodedados.loja.testes.dao.CategoriaDao;
-import br.com.bancodedados.loja.testes.dao.ProdutoDao;
+import br.com.bancodedados.loja.dao.CategoriaDao;
+import br.com.bancodedados.loja.dao.ProdutoDao;
 import br.com.bancodedados.loja.modelo.Categoria;
 import br.com.bancodedados.loja.modelo.Produto;
 import br.com.bancodedados.loja.util.JPAUtil;
