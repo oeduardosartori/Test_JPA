@@ -3,6 +3,7 @@ package br.com.bancodedados.loja.modelo;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "pedidos")
@@ -15,6 +16,8 @@ public class Pedido {
     private LocalDate data = LocalDate.now();
     @ManyToOne
     private Cliente cliente;
+    @OneToMany
+    private List<itemPedido> itens;
 
     public Pedido() {
     }
