@@ -50,4 +50,8 @@ public class itemPedido {
 
     public void setPedido(Pedido pedido) {
     }
+
+    public BigDecimal getValor() {
+        return precoUnitario.multiply(new BigDecimal(quantidade));
+    }
 }
