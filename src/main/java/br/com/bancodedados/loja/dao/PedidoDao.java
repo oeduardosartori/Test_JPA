@@ -4,6 +4,7 @@ import br.com.bancodedados.loja.modelo.Pedido;
 
 import javax.persistence.EntityManager;
 import java.math.BigDecimal;
+import java.util.List;
 
 public class PedidoDao {
 
@@ -21,6 +22,19 @@ public class PedidoDao {
         String jpql = "select sum(p.valorTotal) from Pedido p";
         return manager.createQuery(jpql, BigDecimal.class)
                 .getSingleResult();
+    }
+
+    public List<Object[]> relatorioVendas() {
+        String jpql = "SELECT produto.nome, " +
+                "SUM(item.quantidade), " +
+                "MAX(pedido.data) " +
+                "FROM Pedido pedido" +
+                "JOIN pedido.itens item" +
+                "JOIN item.produto produto" +
+                "GROUP BY produto.nome" +
+                "ORDER BY item.quantidade DESC";
+        return manager.createQuery(jpql, Object[].class)
+                .getResultList();
     }
 
 }
