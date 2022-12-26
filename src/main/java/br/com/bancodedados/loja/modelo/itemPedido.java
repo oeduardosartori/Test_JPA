@@ -23,6 +23,7 @@ public class itemPedido {
     public itemPedido(int quantidade, Pedido pedido, Produto produto) {
         this.quantidade = quantidade;
         this.pedido = pedido;
+        this.precoUnitario = produto.getPreco();
         this.produto = produto;
     }
 
@@ -46,4 +47,6 @@ public class itemPedido {
         return produto;
     }
 
+    public void setPedido(Pedido pedido) {
+    }
 }
